@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Muse — Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <h1 class="logo">Muse</h1>
+      <nav class="nav">
+        <ul>
+          <li><span class="disabled">Runway</span></li>
+          <li><span class="disabled">Street</span></li>
+          <li><span class="disabled">Beauty</span></li>
+          <li><a href="index.html" class="btn">Flex</a></li>
+          <li><a href="grid.html" class="btn active">Grid</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="grid-layout">
+      <aside class="sidebar sidebar-left">
+        <h3>Quick Reads</h3>
+        <ul>
+          <li>Denim, reimagined</li>
+          <li>The new minimalists</li>
+          <li>Autumn colour guide</li>
+          <li>Accessories to know</li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <article class="article">
+          <div class="thumb"></div>
+          <div>
+            <span class="eyebrow">Street Style</span>
+            <h2>Layers That Work</h2>
+            <p>From trench coats to oversized knits, the best street looks are built one layer at a time.</p>
+          </div>
+        </article>
+        <article class="article">
+          <div class="thumb"></div>
+          <div>
+            <span class="eyebrow">Beauty</span>
+            <h2>The Glow Edit</h2>
+            <p>Skin-first routines and soft, dewy finishes lead this season's beauty looks.</p>
+          </div>
+        </article>
+      </main>
+
+      <aside class="sidebar sidebar-right">
+        <div class="card">
+          <h3>Editor's Pick</h3>
+          <p class="muted">A tailored camel coat that works every day of the week.</p>
+          <span class="eyebrow">Read more →</span>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2026 Muse Magazine. All rights reserved.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

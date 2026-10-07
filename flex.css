@@ -1,0 +1,39 @@
+/* Flex: all layout below is flexbox only */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* left sidebar, main, right sidebar in one row */
+.flex-layout {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.flex-layout .sidebar-left,
+.flex-layout .sidebar-right { flex: 1; }
+
+.flex-layout .main { flex: 2.5; }
+
+/* Mobile */
+@media (max-width: 767px) {
+
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+}
