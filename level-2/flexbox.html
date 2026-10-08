@@ -2,39 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Level 2 - Flexbox Layout</title>
+  <title>Muse — Flex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="flexbox-style.css">
 </head>
 <body>
   <div class="page">
+
     <header class="header">
-      <h1>Header</h1>
+      <h1 class="logo">Muse</h1>
+      <nav class="nav">
+        <ul>
+          <li><span class="disabled">Runway</span></li>
+          <li><span class="disabled">Street</span></li>
+          <li><span class="disabled">Beauty</span></li>
+          <li><a href="flexbox.html" class="btn active">Flex</a></li>
+          <li><a href="grid.html" class="btn">Grid</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
     <div class="flex-layout">
-      <main class="main-content">
-        <h2>Main Content</h2>
-        <p>This is the main content area which takes up 70% width on desktop.</p>
+      <aside class="sidebar sidebar-left">
+        <h3>Trending</h3>
+        <ul>
+          <li>The return of tailoring</li>
+          <li>Five ways to wear linen</li>
+          <li>Inside Paris Fashion Week</li>
+          <li>Quiet luxury, explained</li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <div class="hero" role="img" aria-label="Featured editorial"></div>
+        <article class="article">
+          <span class="eyebrow">Cover Story</span>
+          <h2>Soft Structure: The Season's Quiet Revolution</h2>
+          <p class="muted">By Amelia Hart · 6 min read</p>
+          <p>Designers are trading sharp edges for fluid silhouettes. Think relaxed blazers, draped satin, and a palette of warm neutrals that feels effortless and timeless.</p>
+        </article>
+        <article class="article">
+          <span class="eyebrow">Style Notes</span>
+          <h2>Why Less Is Always More</h2>
+          <p>A well-chosen wardrobe speaks softly. Invest in fewer pieces, made to last, and let texture do the talking.</p>
+        </article>
       </main>
 
-      <aside class="sidebar">
-        <h3>Sidebar</h3>
-        <p>This is the sidebar which takes up 30% width on desktop.</p>
+      <aside class="sidebar sidebar-right">
+        <div class="card">
+          <h3>Newsletter</h3>
+          <p class="muted">Style stories delivered weekly.</p>
+          <span class="eyebrow">Subscribe →</span>
+        </div>
       </aside>
     </div>
 
     <footer class="footer">
-      <p>Footer Content</p>
+      <p>&copy; 2026 Muse Magazine. All rights reserved.</p>
     </footer>
+
   </div>
 </body>
 </html>

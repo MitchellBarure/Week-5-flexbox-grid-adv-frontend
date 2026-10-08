@@ -1,28 +1,55 @@
-/* Grid Layout styles */
+/* Grid: all layout below is CSS grid only */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
 
-/* Desktop layout (default) */
+.nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* left sidebar, main, right sidebar as three columns */
 .grid-layout {
   display: grid;
-  grid-template-columns: 7fr 3fr;
-  grid-template-areas: "main sidebar";
-  margin-top: 1rem;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-areas: "left main right";
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  align-items: start;
 }
 
-.grid-layout .main-content {
-  grid-area: main;
+.grid-layout .sidebar-left  { grid-area: left; }
+.grid-layout .main          { grid-area: main; }
+.grid-layout .sidebar-right { grid-area: right; }
+
+.grid-layout .article {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--space-3);
+  align-items: start;
 }
 
-.grid-layout .sidebar {
-  grid-area: sidebar;
+.grid-layout .thumb {
+  aspect-ratio: 1;
+  /* Replaced hex codes with color variables */
+  background: linear-gradient(135deg, var(--color-thumb-start), var(--color-thumb-end));
 }
 
-/* Mobile layout: stack vertically */
+/* Mobile */
 @media (max-width: 767px) {
-  .grid-layout {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "main"
-      "sidebar";
-    gap: 1rem;
-  }
+
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
 }
