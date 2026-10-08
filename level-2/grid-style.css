@@ -41,3 +41,11 @@
     grid-template-areas: "main sidebar";
   }
 }
+
+.thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: var(--space-2);
+}
