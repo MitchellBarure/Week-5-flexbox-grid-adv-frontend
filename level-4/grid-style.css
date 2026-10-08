@@ -86,7 +86,8 @@ body {
 .nav ul {
     display: grid;
     grid-auto-flow: column;
-    justify-content: center;
+    grid-auto-columns: max-content;;
+    justify-content: start;
     align-items: center;
     gap: var(--space-3);
     height: 100%;
@@ -102,8 +103,8 @@ body {
     --left-sidebar: var(--sidebar-width);
     --right-sidebar: var(--sidebar-width);
     display: grid;
-    grid-template-columns: var(--left-sidebar) minmax(0, 1fr) var(--right-sidebar);
-    grid-template-areas: "left main right";
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "main" "right";
     gap: var(--layout-gap);
     align-items: start;
     padding-block: var(--space-3);
@@ -118,8 +119,6 @@ body {
 
 .sidebar-right {
     grid-area: right;
-    position: sticky;
-    top: calc(var(--header-height) + var(--nav-height) + var(--space-3));
 }
 
 .sidebar h3 {
@@ -228,7 +227,7 @@ body {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-3);
     margin-bottom: var(--space-4);
 }
@@ -240,4 +239,67 @@ body {
     text-transform: uppercase;
 }
 
+/* Media Queries and Responsive Layout */
+/* The layout uses a MOBILE FIRST structure before expanding into tablet and desktop layouts. */
+/* Below 1024px, the right sidebar stays expanded */
+@media (max-width: 1023px) {
+    .sidebar-right .sidebar-toggle {
+        display: none;
+    }
 
+    .sidebar-right .sidebar-toggle + .sidebar-content {
+        display: block;
+    }
+}
+
+/* Below 768px, the left side bar also stays expanded */
+@media (max-width: 767px) {
+    .sidebar-left .sidebar-toggle, .sidebar-left .sidebar-content {
+        display: none;
+    }
+
+    .sidebar-left .sidebar-toggle + .sidebar-content {
+        display: block;
+    }
+}
+
+/* 480px+: footer changes to three columns */
+@media (min-width: 480px) {
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 768px+: left sidebar beside main content, right sidebar below both */
+@media (min-width: 768px) {
+    .nav ul {
+        justify-content: center;
+    }
+
+    .layout {
+        grid-template-columns: var(--left-sidebar) minmax(0, 1fr);
+        grid-template-areas: "left main" "right right";
+        padding-block: var(--space-4);
+    }
+}
+
+/* 1024px+: the full Holy Grail three column layout */
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: var(--left-sidebar) minmax(0, 1fr) var(--right-sidebar);
+        grid-template-areas: "left main right";
+    }
+
+    .sidebar-right {
+        position: sticky;
+        top: calc(var(--header-height) + var(--nav-height) + var(--space-3));
+    }
+}
+
+/* 1280px+: wider sidebars and spacing */
+@media (min-width: 1280px) {
+    :root {
+        --sidebar-width: 16rem;
+        --layout-gap: var(--space-4);
+    }
+}
