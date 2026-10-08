@@ -4,15 +4,6 @@
   flex-wrap: wrap;
   margin-top: var(--space-3);
   margin-bottom: var(--space-3);
-  gap: 2%;
-}
-
-.flex-layout > .main-content {
-  flex-basis: 68%;
-}
-
-.flex-layout > .sidebar {
-  flex-basis: 30%;
 }
 
 /* Mobile layout: stack vertically */
@@ -25,5 +16,34 @@
   .flex-layout > .main-content,
   .flex-layout > .sidebar {
     flex-basis: 100%;
+  }
+}
+
+/* Tablet layout: stack vertically */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .flex-layout {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .flex-layout > .main-content,
+  .flex-layout > .sidebar {
+    flex-basis: 100%;
+  }
+}
+
+/* Desktop layout: 70/30 split */
+@media (min-width: 1024px) {
+  .flex-layout {
+    flex-direction: row;
+    gap: 2%;
+  }
+
+  .flex-layout > .main-content {
+    flex-basis: 68%;
+  }
+
+  .flex-layout > .sidebar {
+    flex-basis: 30%;
   }
 }
