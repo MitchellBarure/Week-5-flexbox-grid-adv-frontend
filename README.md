@@ -1,3 +1,23 @@
+# Group 9: Flexbox & Grid Activity
+
+## Group Members
+
+- Mitchell Barure
+- Lincoln Keza Batsinduka
+- Rebakure Kevin
+- Mufaro Victoria Kunze
+- Rhoda Nicole Umutesi
+
+## Team Task Sheet
+
+https://docs.google.com/spreadsheets/d/1YCGk-yYCtS76zkS1WOVGNIyVgBRUPZzlH-WBplWcQp4/edit?usp=sharing
+
+## Reflection
+
+The group reflection is a PDF at the root of this repository: [reflection.pdf](reflection.pdf)
+
+---
+
 # Mastering CSS Layouts: Flexbox vs. Grid Learning Activity
 
 ## Overview
