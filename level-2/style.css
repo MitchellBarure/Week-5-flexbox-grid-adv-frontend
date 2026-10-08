@@ -35,7 +35,7 @@ body { min-width: 1200px; }
 .btn:hover,
 .btn.active {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-surface); /* Replaced #fff */
 }
 
 .sidebar h3 {
@@ -59,8 +59,12 @@ body { min-width: 1200px; }
 
 .hero {
   margin-bottom: var(--space-3);
+  display: block;
+  width: 100%;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #e8d5c8, #c9a58f);
+  object-fit: cover;
+  /* Replaced hex codes with color variables */
+  background: linear-gradient(135deg, var(--color-hero-start), var(--color-hero-end));
 }
 
 .article { margin-bottom: var(--space-4); }
