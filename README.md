@@ -14,7 +14,7 @@ https://docs.google.com/spreadsheets/d/1YCGk-yYCtS76zkS1WOVGNIyVgBRUPZzlH-WBplWc
 
 ## Reflection
 
-The group reflection is a PDF at the root of this repository: [reflection.pdf](reflection.pdf)
+The group reflection is a PDF at the root of this repository: [View Team Reflection PDF](./Team_Reflection.pdf)
 
 ---
 
