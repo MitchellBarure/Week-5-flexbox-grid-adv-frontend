@@ -6,12 +6,6 @@
   --color-accent: #b5654a;
   --color-border: #e6e1da;
   
-  --color-white: #ffffff;
-  --color-hero-start: #e8d5c8;
-  --color-hero-end: #c9a58f;
-  --color-thumb-start: #d9e0d3;
-  --color-thumb-end: #9fb08f;
-
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -19,12 +13,9 @@
   --space-2: 1rem;
   --space-3: 1.5rem;
   --space-4: 2.5rem;
-  --space-5: 4rem;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -44,38 +35,64 @@ h1, h2, h3 {
   margin: 0 0 var(--space-2);
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.1rem; }
-
-p { margin: 0 0 var(--space-2); }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
 }
 
-a:hover { color: var(--color-accent); }
+.header {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
 
-ul {
+.nav {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
-.eyebrow {
-  display: block;
-  margin-bottom: var(--space-1);
+.nav a {
+  text-decoration: none;
   color: var(--color-accent);
-  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-accent);
   text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
 }
 
-.muted { color: var(--color-muted); }
+.nav a:hover, .nav a.active {
+  background: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.main-content {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.sidebar {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.footer {
+  margin-top: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  color: var(--color-muted);
+}
