@@ -1,0 +1,133 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: var(--space-3) 0;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.user-name {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+}
+
+.header + .nav {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav ul {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.btn:hover,
+.btn.active {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.disabled {
+  color: var(--color-muted);
+  cursor: default;
+  pointer-events: none;
+}
+
+.sidebar h3 {
+  padding-bottom: var(--space-1);
+  border-bottom: 2px solid var(--color-accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sidebar li {
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card,
+.post {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.post { padding: var(--space-2); }
+
+.hero {
+  width: 100%;
+  height: 300px;
+  margin-bottom: var(--space-3);
+  object-fit: cover;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin-bottom: var(--space-2);
+  object-fit: cover;
+}
+
+.article { margin-bottom: var(--space-4); }
+
+.footer {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer p { margin: 0; }
+
+.footer-links {
+  margin-bottom: var(--space-4);
+  text-align: left;
+}
