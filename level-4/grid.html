@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4:Grid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../level-3/base.css">
+    <link rel="stylesheet" href="grid-style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo">Muse</h1>
+        <ul class="user-menu">
+            <li><a href="flex.html" class="btn" >Flex</a></li>
+            <li><a href="grid.html" class="btn active" aria-current="page">Grid</a></li>
+        </ul>
+    </header>
+
+    <nav class="nav" aria-label="Sections">
+        <ul>
+            <li><a href="#">Runway</a></li>
+            <li><a href="#">Street</a></li>
+            <li><a href="#">Beauty</a></li>
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">Shopping</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+
+        <aside class="sidebar sidebar-left" aria-label="Categories">
+            <button type="button" class="sidebar-toggle" aria-expanded="true" aria-controls="sidebar-left-content" aria-label="Toggle categories sidebar">&lsaquo;</button>
+            <div class="sidebar-content" id="sidebar-left-content">
+                <h3>Browse</h3>
+                <ul>
+                    <li><a href="#">Lookbooks</a></li>
+                    <li><a href="#">Editorials</a></li>
+                    <li><a href="#">The Edit</a></li>
+                    <li><a href="#">Photo Essays</a></li>
+                    <li><a href="#">Designers</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <article class="card card-feature">
+                <img class="card-image" src="assets/aiony-haust-K0DxxljcRv0-unsplash.jpg" alt="Model in profile wearing a relaxed cream blazer, holding a dried flower">
+                <span class="eyebrow">Cover Story</span>
+                <h2>The Lookbook: Autumn in Eight Frames</h2>
+                <p>Our editors picked the eight images that define the season, from cream tailoring to sun-washed streetwear. Scroll the mosaic and find your favourite.</p>
+                <p class="muted">Photographed by the Muse studio · 8 min read</p>
+            </article>
+
+            <article class="card">
+                <img class="card-image" src="assets/chyntia-juls-HlVjI5WmoQY-unsplash.jpg" alt="Black and white shot of a model in a textured blazer and black trousers">
+                <span class="eyebrow">Monochrome</span>
+                <h2>Black, White, Repeat</h2>
+                <p>Texture is the new colour.</p>
+                <p class="muted">3 min read</p>
+            </article>
+
+            <article class="card">
+                <img class="card-image" src="assets/simi-iluyomade-_2GLsXzyhek-unsplash.jpg" alt="Two people in sunglasses and black streetwear in front of a metal shutter">
+                <span class="eyebrow">Street</span>
+                <h2>Shutter Style</h2>
+                <p>Off-duty looks from the back alleys of Lagos.</p>
+                <p class="muted">4 min read</p>
+            </article>
+
+            <blockquote class="card card-quote">
+                <p>&ldquo;Elegance is not about being noticed, it is about being remembered.&rdquo;</p>
+                <footer>Giorgio Armani</footer>
+            </blockquote>
+
+            <article class="card card-wide">
+                <img class="card-image" src="assets/sirio-7_ZNLVlJchs-unsplash.jpg" alt="Editorial fashion portrait">
+                <div class="card-body">
+                    <span class="eyebrow">Interview</span>
+                    <h2>Ten Minutes With the Designer Redefining Tailoring</h2>
+                    <p>On sketchbooks, second-hand markets and why the best coat is the one you never take off.</p>
+                    <p class="muted">By Jonah Reyes · 9 min read</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img class="card-image" src="assets/alireza-dolati-OVS3rqXq9gg-unsplash.jpg" alt="Close-up of a model with freckled skin covering her eyes with one hand">
+                <span class="eyebrow">Beauty</span>
+                <h2>Bare Skin, Bold Lip</h2>
+                <p>The makeup look of the season.</p>
+                <p class="muted">2 min read</p>
+            </article>
+
+            <article class="card card-list">
+                <span class="eyebrow">The Edit</span>
+                <h2>Five Pieces Under $100</h2>
+                <ol>
+                    <li>Linen overshirt</li>
+                    <li>Pleated midi skirt</li>
+                    <li>Canvas tote</li>
+                    <li>Silk scarf</li>
+                    <li>White leather sneaker</li>
+                </ol>
+            </article>
+
+            <article class="card">
+                <img class="card-image" src="assets/vladimir-yelizarov-GrU2PUPEwso-unsplash.jpg" alt="Woman on a sidewalk in a tailored cropped black blazer and pleated skirt">
+                <span class="eyebrow">Culture</span>
+                <h2>Cropped &amp; Confident</h2>
+                <p>The blazer proportions everyone is copying.</p>
+                <p class="muted">5 min read</p>
+            </article>
+
+            <article class="card card-wide">
+                <img class="card-image" src="assets/dom-hill-nimElTcTNyY-unsplash.jpg" alt="Model in a yellow cropped hoodie and joggers on a seaside basketball court">
+                <div class="card-body">
+                    <span class="eyebrow">Shopping</span>
+                    <h2>Sunshine Sportswear</h2>
+                    <p>Bright athleisure for the last warm days.</p>
+                    <p class="muted">3 min read</p>
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar sidebar-right" aria-label="Trending and newsletter">
+            <button type="button" class="sidebar-toggle" aria-expanded="true" aria-controls="sidebar-right-content" aria-label="Toggle trending sidebar">&rsaquo;</button>
+            <div class="sidebar-content" id="sidebar-right-content">
+                <h3>Most Viewed</h3>
+                <ul>
+                    <li><a href="#">The return of tailoring</a></li>
+                    <li><a href="#">Five ways to wear linen</a></li>
+                    <li><a href="#">Inside Paris Fashion Week</a></li>
+                    <li><a href="#">Quiet luxury, explained</a></li>
+                </ul>
+
+                <div class="card">
+                    <h3>The Mosaic Weekly</h3>
+                    <p class="muted">Eight frames, every Friday.</p>
+                    <a href="#" class="eyebrow">Subscribe →</a>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>Sections</h3>
+                <ul>
+                    <li><a href="#">Runway</a></li>
+                    <li><a href="#">Street</a></li>
+                    <li><a href="#">Beauty</a></li>
+                    <li><a href="#">Culture</a></li>
+                    <li><a href="#">Shopping</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Advertise</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2026 Muse Magazine. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
