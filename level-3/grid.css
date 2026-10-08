@@ -35,7 +35,7 @@
   aspect-ratio: 1;
 }
 
-/* Tablet: main on top, sidebars side by side below */
+/*Mobile*/
 @media (max-width: 1023px) {
   .grid-layout {
     grid-template-columns: 1fr 1fr;
@@ -45,7 +45,7 @@
   }
 }
 
-/* Mobile: single column, header stacks */
+/*Mobile*/
 @media (max-width: 767px) {
   .header { grid-template-columns: 1fr; gap: var(--space-2); }
   .nav ul { grid-auto-flow: row; grid-template-columns: repeat(auto-fit, minmax(80px, max-content)); gap: var(--space-1); }
