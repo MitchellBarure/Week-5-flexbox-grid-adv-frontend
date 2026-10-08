@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Muse — Grid</title>
+  <title>Level 2 - Grid Layout</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="grid-style.css">
 </head>
 <body>
   <div class="page">
-
     <header class="header">
       <h1 class="logo">Muse</h1>
       <nav class="nav">
@@ -20,26 +19,16 @@
           <li><span class="disabled">Runway</span></li>
           <li><span class="disabled">Street</span></li>
           <li><span class="disabled">Beauty</span></li>
-          <li><a href="index.html" class="btn">Flex</a></li>
+          <li><a href="flexbox.html" class="btn">Flex</a></li>
           <li><a href="grid.html" class="btn active">Grid</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="grid-layout">
-      <aside class="sidebar sidebar-left">
-        <h3>Quick Reads</h3>
-        <ul>
-          <li>Denim, reimagined</li>
-          <li>The new minimalists</li>
-          <li>Autumn colour guide</li>
-          <li>Accessories to know</li>
-        </ul>
-      </aside>
-
-      <main class="main">
+      <main class="main-content">
         <article class="article">
-          <img class="thumb" src="https://images.vogue.it/Photovogue/5ae9f660-34b6-11f0-ae00-4de3051ce20a_gallery.jpg" alt="Article photo">
+          <img class="thumb" src="https://images.vogue.it/Photovogue/6d75bc10-34b6-11f0-ae00-4de3051ce20a_gallery.jpg" alt="Street style layers">
           <div>
             <span class="eyebrow">Street Style</span>
             <h2>Layers That Work</h2>
@@ -47,7 +36,7 @@
           </div>
         </article>
         <article class="article">
-          <img class="thumb" src="https://images.vogue.it/Photovogue/43c399f0-34b6-11f0-ae00-4de3051ce20a_gallery.jpg" alt="Article photo">
+          <img class="thumb" src="https://images.vogue.it/Photovogue/5702aa10-34b6-11f0-ae00-4de3051ce20a_gallery.jpg" alt="Beauty glow edit">
           <div>
             <span class="eyebrow">Beauty</span>
             <h2>The Glow Edit</h2>
@@ -56,7 +45,16 @@
         </article>
       </main>
 
-      <aside class="sidebar sidebar-right">
+      <aside class="sidebar">
+        <div class="card" style="margin-bottom: var(--space-3);">
+          <h3>Quick Reads</h3>
+          <ul>
+            <li>Denim, reimagined</li>
+            <li>The new minimalists</li>
+            <li>Autumn colour guide</li>
+            <li>Accessories to know</li>
+          </ul>
+        </div>
         <div class="card">
           <h3>Editor's Pick</h3>
           <p class="muted">A tailored camel coat that works every day of the week.</p>
@@ -68,7 +66,6 @@
     <footer class="footer">
       <p>&copy; 2026 Muse Magazine. All rights reserved.</p>
     </footer>
-
   </div>
 </body>
 </html>

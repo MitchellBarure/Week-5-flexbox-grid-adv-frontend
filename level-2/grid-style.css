@@ -1,0 +1,51 @@
+/* Grid Layout styles */
+.grid-layout {
+  display: grid;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-3);
+  gap: var(--space-3);
+}
+
+.grid-layout .main-content {
+  grid-area: main;
+}
+
+.grid-layout .sidebar {
+  grid-area: sidebar;
+}
+
+/* Mobile layout: stack vertically */
+@media (max-width: 767px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "main"
+      "sidebar";
+  }
+}
+
+/* Tablet layout: stack vertically (or adjust to preference) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "main"
+      "sidebar";
+  }
+}
+
+/* Desktop layout: 70/30 split */
+@media (min-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas: "main sidebar";
+  }
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: var(--space-2);
+}

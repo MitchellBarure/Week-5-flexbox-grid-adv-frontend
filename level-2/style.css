@@ -1,6 +1,8 @@
+/* Shared components (desktop only) */
+body { min-width: 1200px; }
+
 .page {
-  width: 100%;
-  max-width: 1200px;
+  width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-3);
 }
@@ -33,7 +35,7 @@
 .btn:hover,
 .btn.active {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-surface); /* Replaced #fff */
 }
 
 .sidebar h3 {
@@ -57,9 +59,12 @@
 
 .hero {
   margin-bottom: var(--space-3);
-  aspect-ratio: 4 / 3;
+  display: block;
   width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  /* Replaced hex codes with color variables */
+  background: linear-gradient(135deg, var(--color-hero-start), var(--color-hero-end));
 }
 
 .article { margin-bottom: var(--space-4); }
