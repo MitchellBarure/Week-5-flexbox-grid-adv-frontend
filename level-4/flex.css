@@ -1,23 +1,61 @@
-/* Shared components (copied from level-3/style.css) */
+/* Level 4: Holy Grail layout (Flexbox) */
+
+/* Layout dimensions */
+:root {
+  --header-height: 4.5rem;
+  --nav-height: 3rem;
+  --sidebar-width: clamp(11rem, 18vw, 15rem);
+  --sidebar-collapsed: 3rem;
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+  --layout-gap: var(--space-3);
+  --card-gap: var(--space-3);
+  --card-min: 14rem;
+  --page-max: 90rem;
+}
+
+html { scroll-padding-top: calc(var(--header-height) + var(--nav-height)); }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: var(--header-height);
+}
+
+.header,
+.nav,
+.layout,
+.footer {
+  padding-inline: max(var(--gutter), calc((100% - var(--page-max)) / 2));
+}
+
+/* Header */
 .header {
-  padding: var(--space-3) 0;
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 
 .logo {
   margin: 0;
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 4vw, 2rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.nav ul {
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.user-menu {
+  display: flex;
+  gap: var(--space-1);
+  margin-left: auto;
 }
 
 .btn {
+  display: inline-block;
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--color-accent);
   color: var(--color-accent);
@@ -30,6 +68,39 @@
   color: #fff;
 }
 
+/* Navigation */
+.nav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 10;
+  flex: none;
+  height: var(--nav-height);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 100%;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Holy grail layout: sidebars + main */
+.layout {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  gap: var(--layout-gap);
+  padding-block: var(--space-3);
+}
+
+/* Sidebars */
 .sidebar h3 {
   padding-bottom: var(--space-1);
   border-bottom: 2px solid var(--color-accent);
@@ -43,16 +114,169 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.sidebar .card { margin-top: var(--space-3); }
+
+.sidebar-toggle {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: var(--space-2);
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover { border-color: var(--color-accent); }
+
+.sidebar-left .sidebar-toggle { margin-left: auto; }
+
+/* Collapsed state: JS only flips aria-expanded on the toggle */
+.sidebar-toggle[aria-expanded="false"] { transform: rotate(180deg); }
+.sidebar-toggle[aria-expanded="false"] + .sidebar-content { display: none; }
+
+/* Below 1024px the right sidebar has no toggle and always shows its content */
+@media (max-width: 1023.98px) {
+  .sidebar-right .sidebar-toggle { display: none; }
+  .sidebar-right .sidebar-toggle + .sidebar-content { display: block; }
+}
+
+/* Below 768px the left sidebar has no toggle either */
+@media (max-width: 767.98px) {
+  .sidebar-left .sidebar-toggle { display: none; }
+  .sidebar-left .sidebar-toggle + .sidebar-content { display: block; }
+}
+
+/* Main content: cards */
+.main {
+  container: cards / inline-size;
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--card-gap);
+  min-width: 0;
+}
+
 .card {
   padding: var(--space-3);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
 }
 
+.main .card {
+  --cols: 1;
+  display: flex;
+  flex: 1 1 var(--card-min);
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin-bottom: var(--space-2);
+  object-fit: cover;
+}
+
+.main .card h2 { font-size: 1.25rem; }
+
+.main .card .muted {
+  margin: auto 0 0;
+  font-size: 0.85rem;
+}
+
+/* Cards reflow on the width of .main, not the viewport */
+@container cards (min-width: 26rem) {
+  .card {
+    --cols: 2;
+    flex: 0 1 calc((100% - (var(--cols) - 1) * var(--card-gap)) / var(--cols));
+  }
+}
+
+@container cards (min-width: 48rem) {
+  .card { --cols: 3; }
+}
+
+@container cards (min-width: 68rem) {
+  .card { --cols: 4; }
+}
+
+/* Footer */
 .footer {
-  padding: var(--space-4) 0;
+  padding-block: var(--space-4);
   border-top: 1px solid var(--color-border);
   color: var(--color-muted);
   font-size: 0.85rem;
   text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.footer-column { flex: 1 1 0; }
+
+.footer-column h3 {
+  color: var(--color-text);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* 480px+: footer links in three columns  */
+@media (min-width: 480px) {
+  .footer-links { flex-direction: row; }
+}
+
+/* 768px+: left sidebar beside main, right sidebar wraps below */
+@media (min-width: 768px) {
+  .nav ul { justify-content: center; }
+
+  .layout {
+    flex-flow: row wrap;
+    padding-block: var(--space-4);
+  }
+
+  .sidebar-left {
+    top: calc(var(--header-height) + var(--nav-height) + var(--space-3));
+    flex: 0 0 var(--sidebar-width);
+    align-self: flex-start;
+  }
+
+  .sidebar-left:has(.sidebar-toggle[aria-expanded="false"]) {
+    flex-basis: var(--sidebar-collapsed);
+  }
+
+  .sidebar-right { flex: 1 1 100%; }
+}
+
+/* 1024px+: full holy grail, three columns */
+@media (min-width: 1024px) {
+  .layout { flex-wrap: nowrap; }
+
+  .sidebar-right {
+    position: sticky;
+    top: calc(var(--header-height) + var(--nav-height) + var(--space-3));
+    flex: 0 0 var(--sidebar-width);
+    align-self: flex-start;
+  }
+
+  .sidebar-right:has(.sidebar-toggle[aria-expanded="false"]) {
+    flex-basis: var(--sidebar-collapsed);
+  }
+}
+
+/* 1280px+: wider sidebars and gaps */
+@media (min-width: 1280px) {
+  :root {
+    --sidebar-width: 16rem;
+    --layout-gap: var(--space-4);
+  }
 }
