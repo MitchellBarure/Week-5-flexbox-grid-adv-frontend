@@ -1,0 +1,28 @@
+/* Grid Layout styles */
+
+/* Desktop layout (default) */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  grid-template-areas: "main sidebar";
+  margin-top: 1rem;
+}
+
+.grid-layout .main-content {
+  grid-area: main;
+}
+
+.grid-layout .sidebar {
+  grid-area: sidebar;
+}
+
+/* Mobile layout: stack vertically */
+@media (max-width: 767px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "main"
+      "sidebar";
+    gap: 1rem;
+  }
+}

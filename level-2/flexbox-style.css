@@ -1,0 +1,43 @@
+/* Flexbox Layout styles */
+
+/* Desktop layout (default) */
+.flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 2%; /* Creating a bit of gap, meaning widths need adjusting to fit 100% or we can just use padding */
+}
+
+/* We will use 70% and 30% without gap, and add padding to children to separate them, or calc */
+.flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.flex-layout > .main-content {
+  flex-basis: 70%;
+  box-sizing: border-box;
+}
+
+.flex-layout > .sidebar {
+  flex-basis: 30%;
+  box-sizing: border-box;
+}
+
+/* Mobile layout: stack vertically */
+@media (max-width: 767px) {
+  .flex-layout {
+    flex-direction: column;
+  }
+  
+  .flex-layout > .main-content,
+  .flex-layout > .sidebar {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  
+  .sidebar {
+    margin-top: 1rem;
+  }
+}
